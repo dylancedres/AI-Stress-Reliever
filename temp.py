@@ -8,7 +8,7 @@ st.set_page_config(layout="wide",
                                "About":"AI App for Stress Relief before initial consultation with health care provider"})
 
 print("Testing the App through the terminal")
-st.subtitle("Testing the App through the web browser")
+st.subheader("Testing the App through the web browser")
 # st.write("Testing the App through the web browser")
 
 # Initialize chat history
