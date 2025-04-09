@@ -1,8 +1,12 @@
 streamlit
-plotly
-seaborn
-matplotlib
 numpy
 pandas
-pandasai
+
+# AI ChatBot Libraries
+pandasai 
 pyyaml
+
+# Visualization Libraries
+plotly    
+seaborn 
+matplotlib
