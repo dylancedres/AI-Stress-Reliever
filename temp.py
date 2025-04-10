@@ -1,4 +1,7 @@
-import pandas as pd, pandasai as pai, streamlit as st, numpy as np, time, random
+import streamlit as st, time, random 
+# import pandas as pd, numpy as np
+# import pandasai as pai
+
 
 # Generate greeting for the user
 def greeting_generator():
@@ -55,7 +58,6 @@ if prompt := st.chat_input("Hello!"):
     
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
-        st.markdown(response)
         response = st.write_stream(greeting_generator())
     
     # Add assistant response to chat history
