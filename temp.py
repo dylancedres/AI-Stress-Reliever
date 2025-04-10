@@ -2,12 +2,11 @@ import streamlit as st, time, random
 # import pandas as pd, numpy as np
 # import pandasai as pai
 
-
 # Generate greeting for the user
-def greeting_generator():    
+def greeting_generator():
     salutes = [
-        st.markdown("You can find information about **Dr. Ana C. Sala Morales**, PsyD, MSc *here* -> [Investigadores CCCUPR 🔬]('https://www.cccupr.org/investigacion/investigadores/ana-c-sala-morales-psyd-msc/')"),
-        st.markdown("A brief description about **Dr. Ana C. Sala Morales**, PsyD, MSc in the Center for the Promotion of Cancer Health Equity (CePCHE) *here* -> [Outreach Lead 🔬]('https://cepche.org/personnel/training-and-outreach-in-reach-staff/')"),
+        "You can find information about **Dr. Ana C. Sala Morales**, PsyD, MSc *here* -> [Investigadores CCCUPR 🔬]('https://www.cccupr.org/investigacion/investigadores/ana-c-sala-morales-psyd-msc/')",
+        "A brief description about **Dr. Ana C. Sala Morales**, PsyD, MSc in the Center for the Promotion of Cancer Health Equity (CePCHE) *here* -> [Outreach Lead 🔬]('https://cepche.org/personnel/training-and-outreach-in-reach-staff/')",
         "Hey! What's up?"
     ]
     greeting = random.choice(salutes)
