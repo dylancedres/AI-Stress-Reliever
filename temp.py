@@ -4,19 +4,11 @@ import streamlit as st, time, random
 
 
 # Generate greeting for the user
-def greeting_generator():
-    links = [
-        ,
-        "https://cepche.org/personnel/training-and-outreach-in-reach-staff/"
-    ]
-    
+def greeting_generator():    
     salutes = [
         st.markdown("You can find information about **Dr. Ana C. Sala Morales**, PsyD, MSc *here* -> [Investigadores CCCUPR 🔬]('https://www.cccupr.org/investigacion/investigadores/ana-c-sala-morales-psyd-msc/')"),
-        # "Hello! How can I help you today?",
-        # "Hi! Hope you are having a great day!",
+        st.markdown("A brief description about **Dr. Ana C. Sala Morales**, PsyD, MSc in the Center for the Promotion of Cancer Health Equity (CePCHE) *here* -> [Outreach Lead 🔬]('https://cepche.org/personnel/training-and-outreach-in-reach-staff/')"),
         "Hey! What's up?"
-        # "Any questions? Ask away!",
-        # "Remember to breathe and drink your water"
     ]
     greeting = random.choice(salutes)
     
