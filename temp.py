@@ -16,7 +16,7 @@ def greeting_generator():
     
     for word in greeting.split():
         yield word + " "
-        time.sleep(0.1)
+        time.sleep(0.5)
 
 st.set_page_config(layout="wide",
                    page_title="PR Stress Reliever",
