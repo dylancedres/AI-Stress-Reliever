@@ -5,12 +5,18 @@ import streamlit as st, time, random
 
 # Generate greeting for the user
 def greeting_generator():
+    links = [
+        "https://www.cccupr.org/investigacion/investigadores/ana-c-sala-morales-psyd-msc/",
+        "https://cepche.org/personnel/training-and-outreach-in-reach-staff/"
+    ]
+    
     salutes = [
-        "Hello! How can I help you today?",
-        "Hi! Hope you are having a great day!",
+        "You can find information about Dr. Ana C. Sala Morales, PsyD, MSc here -> " + st.page_link(links[0], label="Investigadores CCCUPR", icon=":microscope:"),
+        # "Hello! How can I help you today?",
+        # "Hi! Hope you are having a great day!",
         "Hey! What's up?",
-        "Any questions? Ask away!",
-        "Remember to breathe and drink your water"
+        # "Any questions? Ask away!",
+        # "Remember to breathe and drink your water"
     ]
     greeting = random.choice(salutes)
     
