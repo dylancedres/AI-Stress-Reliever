@@ -14,7 +14,7 @@ def greeting_generator():
         st.markdown("You can find information about **Dr. Ana C. Sala Morales**, PsyD, MSc *here* -> [Investigadores CCCUPR 🔬]('https://www.cccupr.org/investigacion/investigadores/ana-c-sala-morales-psyd-msc/')",
         # "Hello! How can I help you today?",
         # "Hi! Hope you are having a great day!",
-        "Hey! What's up?",
+        "Hey! What's up?"
         # "Any questions? Ask away!",
         # "Remember to breathe and drink your water"
     ]
