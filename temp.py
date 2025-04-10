@@ -1,4 +1,4 @@
-import pandas as pd, pandasai as pai, streamlit as st, numpy as np
+import pandas as pd, pandasai as pai, streamlit as st, numpy as np, time, random
 
 st.set_page_config(layout="wide",
                    page_title="PR Stress Reliever",
@@ -11,10 +11,22 @@ print("Testing the App through the terminal")
 st.subheader("Testing the App through the web browser")
 # st.write("Testing the App through the web browser")
 
-
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+# Generate greeting for the user
+def greeting_generator():
+    salutes = [
+        "Hello! How can I help you today?",
+        "Hi! Hope you are having a great day!",
+        "Hey! What's up?",
+        "Any questions? Ask away!",
+        "Remember to breathe and drink your water"
+    ]
+    greeting = random.choice(salutes)
+    return greeting
+
 
 # Display chat messages from history on app rerun:
 #   1. Use a list to store the messages
@@ -26,11 +38,11 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# React to user input
-if prompt := st.chat_input("What is up?"):
+# Accept user input
+if prompt := st.chat_input(greeting_generator()):
     # Display user message in chat message container
-    st.chat_message("user").markdown(prompt)
-    
+    with st.chat_message("user"):
+        st.markdown(prompt)
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     
@@ -41,6 +53,8 @@ if prompt := st.chat_input("What is up?"):
     
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
+
+
 
 
 # Removes "Made with Streamlit"
