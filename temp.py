@@ -11,7 +11,7 @@ def greeting_generator():
     ]
     
     salutes = [
-        "You can find information about Dr. Ana C. Sala Morales, PsyD, MSc here -> " + st.page_link(links[0], label="Investigadores CCCUPR", icon=":microscope:"),
+        "You can find information about Dr. Ana C. Sala Morales, PsyD, MSc here -> " + st.page_link(links[0], label="Investigadores CCCUPR", icon="🔬"),
         # "Hello! How can I help you today?",
         # "Hi! Hope you are having a great day!",
         "Hey! What's up?",
