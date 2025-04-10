@@ -1,20 +1,5 @@
 import pandas as pd, pandasai as pai, streamlit as st, numpy as np, time, random
 
-st.set_page_config(layout="wide",
-                   page_title="PR Stress Reliever",
-                   page_icon=":purple_heart:",
-                   menu_items={"Get help":"mailto:dcedres@cccupr.org",
-                               "Report a Bug":"mailto:dcedres@cccupr.org",
-                               "About":"AI App for Stress Relief before initial consultation with health care provider"})
-
-print("Testing the App through the terminal")
-st.subheader("Testing the App through the web browser")
-# st.write("Testing the App through the web browser")
-
-# Initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
 # Generate greeting for the user
 def greeting_generator():
     salutes = [
@@ -25,7 +10,27 @@ def greeting_generator():
         "Remember to breathe and drink your water"
     ]
     greeting = random.choice(salutes)
-    return greeting
+    
+    for word in greeting.split():
+        yield word + " "
+        time.sleep(0.1)
+
+st.set_page_config(layout="wide",
+                   page_title="PR Stress Reliever",
+                   page_icon=":purple_heart:",
+                   menu_items={"Get help":"mailto:dcedres@cccupr.org",
+                               "Report a Bug":"mailto:dcedres@cccupr.org",
+                               "About":"AI App for Stress Relief before initial consultation with health care provider"})
+
+st.subheader("Testing the App through the web browser")
+# print("Testing the App through the terminal")
+# st.write("Testing the App through the web browser")
+
+
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
 
 # Display chat messages from history on app rerun:
@@ -39,17 +44,19 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Accept user input
-if prompt := st.chat_input(greeting_generator()):
-    # Display user message in chat message container
-    with st.chat_message("user"):
-        st.markdown(prompt)
+if prompt := st.chat_input("Hello!"):
+    
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     
-    response = f"Echo: {prompt}"
+    # Display user message in chat message container
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         st.markdown(response)
+        response = st.write_stream(greeting_generator())
     
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
